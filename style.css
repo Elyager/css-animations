@@ -94,7 +94,8 @@ header {
   color: white;
 }
 .basket__origin:hover .rectangle {
-  background: red;
+  background: purple;
+  color: white;
   transform: rotateZ(-80deg);
 }
 
@@ -139,6 +140,30 @@ header {
   animation-duration: 500ms;
   animation-iteration-count: infinite;
   animation-delay: 1s;
+}
+
+.basket__anim:hover .anim-fillmode {
+  animation-name: invisible;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.basket__anim:hover .anim-alternate {
+  animation-name: invisible;
+  animation-duration: 500ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.basket__anim:hover .anim-reverse {
+  animation-name: invisible;
+  animation-duration: 1s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+.invisible {
+  opacity: 0;
 }
 
 @keyframes invisible {
