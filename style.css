@@ -122,3 +122,31 @@ header {
   padding: 10px;
   border: 2px solid white;
 }
+
+.basket__anim:hover .anim {
+  animation-name: invisible;
+  animation-duration: 1s;
+}
+
+.basket__anim:hover .anim-infinite {
+  animation-name: invisible;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.basket__anim:hover .anim-delay {
+  animation-name: invisible;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+@keyframes invisible {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
