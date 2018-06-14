@@ -4,10 +4,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column;
+  box-sizing: content-box;
 }
-div {
-  margin: 10px 0;
-}
+
 header {
   text-align: center;
 }
@@ -15,12 +14,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
   width: 80vw;
   cursor: pointer;
   background-color:darkcyan;
   border-radius: 10px;
-  padding: 10px;
+  padding: 80px;
   font-size: 20px;
 }
 .ball {
@@ -49,16 +47,78 @@ header {
   right: 0;
   background-color: cornflowerblue;
 }
-.basket:hover .ball.a {
+.basket__balls:hover .ball.a {
   background-color: purple;
   left: 50%;
   transform: rotate(45deg) skew(-10deg);
 }
-.basket:hover .ball.b {
+.basket__balls:hover .ball.b {
   background-color: yellowgreen;
   right: 50%;
   transform: rotate(-45deg) skew(10deg) scale(1.2);
 }
-.basket:hover .ball {
+.basket__balls:hover .ball {
   box-shadow: 2px 2px 15px black;
+}
+
+.rectangle {
+  width: 100px;
+  height: 100px;
+  background-color: chocolate;
+  box-shadow: 2px 2px 15px black;
+  transition: 1s;
+}
+
+.basket__rectangles:hover .rectangle.X {
+  background-color: purple;
+  transform: rotateX(-45deg);
+}
+.basket__rectangles:hover .rectangle.Y {
+  transform: rotateY(-45deg);
+}
+
+.basket__rectangles:hover .rectangle.Z {
+  transform: rotateZ(45deg);
+}
+
+.basket__rectangles:hover .rectangle.XYZ {
+  transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+}
+/* No deformation using rotate3d */
+.basket__rectangles:hover .rectangle.TD {
+  transform: rotate3d(1,1,.45,60deg);
+}
+
+.basket__rectangles:hover .rectangle {
+  background-color: purple;
+  color: white;
+}
+.basket__origin:hover .rectangle {
+  background: red;
+  transform: rotateZ(-80deg);
+}
+
+.basket__origin:hover .origin-top {
+  transform-origin: top;
+}
+
+.basket__origin:hover .origin-left {
+  transform-origin: left;
+}
+
+.basket__origin:hover .origin-left {
+  transform-origin: top left;
+}
+
+.basket__origin:hover .origin-offset {
+  transform-origin: 120% 120%;
+}
+
+.basket__origin:hover .origin-negative {
+  transform-origin: -10% -10%;
+}
+
+.wrapper {
+  padding: 10px;
+  border: 2px solid white;
 }
