@@ -1,5 +1,18 @@
+:root {
+  /* colors pallete */
+  --main-bg: #fad3cf;
+  --main-font: #c50d66;
+  --basket-bg: #a696c8;
+  --circle-font: #c50d66;
+  --rect-bg: #2470a0;
+  --rect-font: #c50d66;
+  --black: #060608;
+  --white: #fafafa;
+}
+
 body {
-  height: 100vh;
+  background-color: var(--main-bg);
+  color: var(--main-font);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,28 +23,29 @@ body {
 header {
   text-align: center;
 }
+
 .basket {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 80vw;
   cursor: pointer;
-  background-color:darkcyan;
-  border-radius: 10px;
+  background-color: var(--basket-bg);
   padding: 80px;
-  font-size: 20px;
+  margin: 20px 0;
+  font-size: 1.3rem;
 }
+
 .ball {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: bisque;
+  background-color: var(--black);
+  color: var(--white);
   position: relative;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: whitesmoke;
   /* transition-property: width, height; */
   /* transition-duration: 1s; */
   /* transition-timing-function: ease; */
@@ -39,40 +53,47 @@ header {
   /*transform: rotate | skew | translate | scale */
   transition: 1s;
 }
+
 .ball.a {
   left: 0;
-  background-color: brown;
 }
+
 .ball.b {
   right: 0;
-  background-color: cornflowerblue;
 }
+
 .basket__balls:hover .ball.a {
-  background-color: purple;
   left: 50%;
+  background-color: var(--rect-bg);
   transform: rotate(45deg) skew(-10deg);
 }
+
 .basket__balls:hover .ball.b {
-  background-color: yellowgreen;
   right: 50%;
+  background-color: var(--rect-bg);
   transform: rotate(-45deg) skew(10deg) scale(1.2);
 }
+
 .basket__balls:hover .ball {
-  box-shadow: 2px 2px 15px black;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
 }
 
 .rectangle {
   width: 100px;
   height: 100px;
-  background-color: chocolate;
-  box-shadow: 2px 2px 15px black;
+  background-color: var(--rect-bg);
+  color: var(--white);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 10px;
   transition: 1s;
 }
 
 .basket__rectangles:hover .rectangle.X {
-  background-color: purple;
+  background-color: var(--rect-font);
   transform: rotateX(-45deg);
 }
+
 .basket__rectangles:hover .rectangle.Y {
   transform: rotateY(-45deg);
 }
@@ -84,18 +105,13 @@ header {
 .basket__rectangles:hover .rectangle.XYZ {
   transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
 }
+
 /* No deformation using rotate3d */
 .basket__rectangles:hover .rectangle.TD {
-  transform: rotate3d(1,1,.45,60deg);
+  transform: rotate3d(1, 1, .45, 60deg);
 }
 
-.basket__rectangles:hover .rectangle {
-  background-color: purple;
-  color: white;
-}
 .basket__origin:hover .rectangle {
-  background: purple;
-  color: white;
   transform: rotateZ(-80deg);
 }
 
@@ -121,7 +137,7 @@ header {
 
 .wrapper {
   padding: 10px;
-  border: 2px solid white;
+  border: 2px solid var(--white);
 }
 
 .basket__anim:hover .anim {
@@ -139,7 +155,8 @@ header {
   animation-name: invisible;
   animation-duration: 500ms;
   animation-iteration-count: infinite;
-  animation-delay: 1s;
+  animation-delay: 3s;
+  background-color: var(--main-font);
 }
 
 .basket__anim:hover .anim-fillmode {
@@ -164,6 +181,18 @@ header {
 
 .invisible {
   opacity: 0;
+}
+
+.play-state {
+  position: relative;
+  animation-name: bouncing;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+
+.play-state:hover {
+  animation-play-state: paused;
+  background-color: var(--main-font);
 }
 
 @keyframes invisible {
