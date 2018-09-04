@@ -1,0 +1,62 @@
+.basket {
+  width: 80%;
+}
+
+.basket:hover .anim {
+  animation-name: invisible;
+  animation-duration: 1s;
+}
+
+.basket:hover .anim-infinite {
+  animation-name: invisible;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.basket:hover .anim-delay {
+  animation-name: invisible;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+  background-color: var(--main-font);
+}
+
+.basket:hover .anim-fillmode {
+  animation-name: invisible;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.basket:hover .anim-alternate {
+  animation-name: invisible;
+  animation-duration: 500ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.basket__anim:hover .anim-reverse {
+  animation-name: invisible;
+  animation-duration: 1s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.play-state:hover {
+  animation-play-state: paused;
+  background-color: var(--main-font);
+}
+
+@keyframes invisible {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

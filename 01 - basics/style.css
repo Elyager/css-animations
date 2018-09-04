@@ -1,0 +1,35 @@
+.a {
+  left: 0;
+}
+
+.b {
+  right: 0;
+}
+
+.basket:hover .ball.a {
+  left: 50%;
+  background-color: var(--rect-bg);
+  transform: rotate(45deg) skew(-10deg);
+}
+
+.basket:hover .ball.b {
+  right: 50%;
+  background-color: var(--rect-bg);
+  transform: rotate(-45deg) skew(20deg) scale(1.2);
+}
+
+.basket:hover .ball.c {
+  transform: scale(2.2);
+}
+
+.basket:hover .ball.d {
+  transform: skew(45deg);
+}
+
+.basket:hover .ball.e {
+  transform: rotate(90deg);
+}
+
+.basket:hover .ball {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}

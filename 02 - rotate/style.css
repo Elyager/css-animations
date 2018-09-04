@@ -1,0 +1,21 @@
+.basket:hover .rectangle.X {
+  background-color: var(--rect-font);
+  transform: rotateX(-45deg);
+}
+
+.basket:hover .rectangle.Y {
+  transform: rotateY(-45deg);
+}
+
+.basket:hover .rectangle.Z {
+  transform: rotateZ(45deg);
+}
+
+.basket:hover .rectangle.XYZ {
+  transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+}
+
+/* No deformation using rotate3d */
+.basket:hover .rectangle.TD {
+  transform: rotate3d(1, 1, .45, 60deg);
+}
