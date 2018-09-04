@@ -136,8 +136,84 @@ header {
 }
 
 .wrapper {
+  position: relative;
   padding: 10px;
   border: 2px solid var(--white);
+}
+
+.basket__anim--ease-out {
+  border: 2px solid white;
+  height: 500px;
+  margin: auto 0;
+}
+
+.basket__anim--ease-out .ball {
+  position: relative;
+  top: calc(100% - 100px);
+  transition: .2s;
+}
+
+.basket__anim--ease-out:hover .ball {
+  animation-name: bounce-vertical;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+}
+
+.basket__anim--ease-out:active .ball {
+  animation-play-state: paused;
+  background: var(--main-font);
+}
+
+.ease-container {
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  flex-direction: column;
+  width: 80%;
+}
+
+.ease-container .ball {
+  animation-play-state: paused;
+  height: 80px;
+  width: 80px;
+}
+
+.ease-container:hover .ball {
+  animation-play-state: running;
+}
+
+.ease-container .ball{
+  position: relative;
+  animation-name: bounce-horizontal;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.ease-container:hover .ease {
+  animation-timing-function: ease;
+}
+
+.ease-container:hover .linear {
+  animation-timing-function: linear;
+}
+
+.ease-container:hover .ease-in {
+  animation-timing-function: ease-in;
+}
+
+.ease-container:hover .ease-out {
+  animation-timing-function: ease-out;
+}
+
+.ease-container:hover .ease-in-out {
+  animation-timing-function: ease-in-out;
+}
+
+.ease-container:hover .cubic-bezier {
+  animation-timing-function: cubic-bezier(1,-0.71,0,1.85);
 }
 
 .basket__anim:hover .anim {
@@ -183,13 +259,6 @@ header {
   opacity: 0;
 }
 
-.play-state {
-  position: relative;
-  animation-name: bouncing;
-  animation-duration: 1s;
-  animation-direction: alternate;
-}
-
 .play-state:hover {
   animation-play-state: paused;
   background-color: var(--main-font);
@@ -202,5 +271,21 @@ header {
 
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes bounce-vertical {
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes bounce-horizontal {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: calc(100% - 100px);
   }
 }
