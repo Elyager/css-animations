@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Waves</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      height: 500px;
+      background: #0f9bf6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative
+    }
+
+    .content {
+      font-family: Arial;
+      text-align: center;
+      font-size: 2em;
+      color: rgba(255, 255, 255, .8);
+    }
+    .waves {
+      position: absolute;
+      bottom: -135px;
+      height: 527px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .wave {
+      height: 427px;
+      width: 2402px;
+      background: url('./waves.png') center bottom no-repeat;
+      position: absolute;
+      animation: 5s waves ease-in-out infinite alternate;
+      left: -180px;
+      bottom: 0px;
+    }
+    .wave.a {
+      background-position: 0 -854px;
+    }
+    .wave.b {
+      background-position: 0 -427px;
+      animation-delay: .6s;
+    }
+    .wave.c {
+      animation-delay: 1.2s;
+    }
+    @keyframes waves {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(-80px, 30px);
+      }
+      100% {
+        transform: translate(160px, -60px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Waves!</h1>
+      <p>Web animations</p>
+    </div>
+    <div class="waves">
+      <div class="wave a"></div>
+      <div class="wave b"></div>
+      <div class="wave c"></div>
+    </div>
+  </div>
+</body>
+
+</html>
